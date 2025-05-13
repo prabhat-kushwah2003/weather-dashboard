@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <script src="config.js"></script>
 
     <div class="card">
         <div class="search">
@@ -42,7 +43,7 @@
 
     <script>
 
-        const apiKey = 'a5307e51b2aaf232483b8ebf7cbc2fbe';
+        // const apiKey = 'a5307e51b2aaf232483b8ebf7cbc2fbe';
         const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?&units=metric&q=';
 
         const searchBox = document.querySelector('.search input');
@@ -50,7 +51,7 @@
         const weatherIcon = document.querySelector('.weather-icon');
 
         async function checkWeather(city) {
-            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+            const response = await fetch(apiUrl + city + `&appid=${API_KEY}`);
 
             if (response.status == 404) {
                 alert("Error: City not found! Please enter a valid city.");
